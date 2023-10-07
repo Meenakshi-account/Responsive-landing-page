@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+
+
+    <style>
+
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+
+/*  ===== VARIABLE ======  */
+:root {
+  --primary-clr: hsl(237, 20%, 43%);
+  --second-clr: hsl(257, 21%, 50%);
+  --primary-clr-alt: rgb(150, 139, 179);
+  --white-clr: hsl(260, 60%, 99%);
+  --light-indigo-clr: hsl(277, 82%, 96%);
+  --pink-clr: hsl(306, 26%, 84%);
+  --orange-color: hsl(12, 100%, 72%);
+  --light-green-clr: hsl(171, 40%, 86%);
+}
+
+/*  ===== BASE ======  */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1.2rem 2rem;
+}
+
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Montserrat", "Avenir", sans-serif;
+  background-color: var(--white-clr);
+  display: flex;
+  flex-direction: column;
+}
+/*  ===== HEADER ======  */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white-clr);
+}
+.nav-items {
+  display: flex;
+}
+.nav-item {
+  margin-left: 1.5rem;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: rgb(239, 239, 239);
+}
+.nav-link::before {
+  content: "";
+  background-color: var(--orange-color);
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.menu-icons {
+  display: none;
+}
+.bx-menu,
+.bx-x {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: var(--white-clr);
+}
+.bx-x {
+  display: none !important;
+}
+.hide-icon {
+  display: none !important;
+}
+.show-icon {
+  display: block !important;
+}
+/*  ===== BODY ========  */
+.hero {
+  background-image: url("https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/hero_bby.png?raw=true");
+  background-size: cover; 
+  <!-- background-position: center; -->
+  <!-- background-repeat: no-repeat; -->
+  <!-- background-attachment: scroll; -->
+}
+.section_1 {
+  height: 100vh;
+}
+.slogan {
+  margin-top: 3rem;
+}
+.slogan .slogan-title {
+  color: rgb(239, 239, 239);
+  font-size: 2rem;
+  letter-spacing: 0.01rem;
+  max-width: 30rem;
+}
+.slogan .slogan-text {
+  color: var(--white-clr);
+  color: rgb(226, 226, 226);
+  font-size: 1.2rem;
+  letter-spacing: 0.02rem;
+  margin: 1rem 0;
+  max-width: 28rem;
+}
+.hero-btn {
+  cursor: pointer;
+  background-color: hsla(12, 100%, 72%, 0.822);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  padding: 0.8rem 0;
+  border-radius: 5rem;
+  margin-top: 2rem;
+  transition: background-color 300ms;
+}
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: hsl(12, 100%, 72%);
+}
+.home-btn-link {
+  color: var(--white-clr);
+  text-decoration: none;
+  font-size: 1.1rem;
+  <!-- pointer-events: none; -->
+}
+/* - About - */
+.about-container img {
+  display: none;
+}
+.about {
+  padding: 2rem 1rem;
+  background-color: var(--primary-clr);
+}
+.about .about-title {
+  text-transform: capitalize;
+  color: var(--white-clr);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.feature {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.bx-check-circle {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  color: var(--white-clr);
+}
+.feature_desc {
+  color: var(--white-clr);
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  opacity: 0.8;
+  max-width: 30rem;
+  line-height: 1.5rem;
+}
+
+/* section 3 */
+.services {
+  margin: 3rem auto;
+}
+.services-title {
+  color: var(--primary-clr);
+  max-width: 19.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  position: relative;
+  padding-bottom: 0.9rem;
+  margin-bottom: 5rem;
+}
+.services-title::before {
+  content: "";
+  position: absolute;
+  height: 0.3rem;
+  width: 12.9rem;
+  background-color: var(--orange-color);
+  position: absolute;
+  bottom: 0;
+}
+.services-container {
+  margin: 2rem 0;
+  display: grid;
+  /* place-items: end; */
+  row-gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 20rem;
+  position: relative;
+  padding: 2rem 2.5rem;
+  border: thin solid rgba(150, 139, 179, 0.1);
+}
+.service span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(88, 90, 133, 0.219);
+  position: absolute;
+  top: 0.9rem;
+  left: 1.2rem;
+}
+.service-title {
+  color: var(--primary-clr);
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.005rem;
+}
+.service-description {
+  color: var(--primary-clr);
+  font-size: 1.09rem;
+  line-height: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.service-description::before {
+  content: "";
+  background-color: var(--orange-color);
+  left: 0;
+  right: 0;
+  height: 0.3rem;
+  position: absolute;
+  bottom: 0;
+}
+/* section 4 */
+.section_4 {
+  background-color: var(--light-indigo-clr);
+  background-image: url("https://raw.githubusercontent.com/r-e-d-ant/Babysitter-center-landing-page/8e5d8cc959f1cd34712ed196f6ea3676b7ab5929/assets/img/flowers.svg");
+  background-size: 35rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bby_sitter_title {
+  color: var(--primary-clr);
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  max-width: 15rem;
+  position: relative;
+  padding: 0.9rem 0;
+}
+.bby_sitter_title::before {
+  content: "";
+  height: 0.2rem;
+  width: 7rem;
+  background-color: var(--orange-color);
+  position: absolute;
+  bottom: 0;
+}
+.babysitter {
+  margin: 3rem 0;
+  max-width: 20rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(
+    -45deg,
+    hsla(0, 0%, 94%, 0.1),
+    hsla(0, 0%, 94%, 0.3)
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: thin solid rgb(255, 255, 255);
+}
+.babysitter img {
+  width: 25%;
+  margin-bottom: 1rem;
+}
+.baby-sitter-name {
+  color: var(--primary-clr);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.heart {
+  margin-top: 0.3rem;
+}
+.baby-sitter-story {
+  color: var(--primary-clr);
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  max-width: 20rem;
+  margin: 0.5rem 0 0.2rem 0;
+}
+/* section 5 */
+.section_5 {
+  background-image: url("https://raw.githubusercontent.com/r-e-d-ant/Babysitter-center-landing-page/8e5d8cc959f1cd34712ed196f6ea3676b7ab5929/assets/img/big_heart.svg");
+  background-size: 35rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin: 2rem auto;
+}
+.testimony {
+  margin: 3rem 0;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(
+    -45deg,
+    hsla(0, 0%, 94%, 0.1),
+    hsla(0, 0%, 94%, 0.3)
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: thin solid rgb(255, 255, 255);
+}
+.testimonials-title {
+  color: var(--primary-clr);
+  max-width: 21rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  position: relative;
+  padding-bottom: 0.9rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05rem;
+}
+.testimonials-title::before {
+  content: "";
+  height: 0.2rem;
+  width: 17.5rem;
+  background-color: var(--orange-color);
+  position: absolute;
+  bottom: 0;
+}
+.testimony img {
+  width: 25%;
+  margin-bottom: 1rem;
+}
+.tester-name {
+  color: var(--primary-clr);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.testimony-text {
+  color: var(--primary-clr);
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  max-width: 20rem;
+  margin: 1.2rem 0 2rem 0;
+}
+
+/*  ===== FOOTER ======  */
+footer {
+  background-image: url("https://raw.githubusercontent.com/r-e-d-ant/Babysitter-center-landing-page/8e5d8cc959f1cd34712ed196f6ea3676b7ab5929/assets/img/wave.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.top-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-title {
+  color: var(--white-clr);
+  font-size: 4rem;
+  font-weight: 400;
+  padding-top: 7rem;
+}
+.footer-element {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.bx-home,
+.bx-phone,
+.bx-envelope {
+  color: var(--white-clr);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+.address-text,
+.phone-text,
+.email-text {
+  color: var(--white-clr);
+  font-size: 1rem;
+  opacity: 0.9;
+}
+.mapouter {
+  position: relative;
+  text-align: right;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  border-radius: 50%;
+}
+.end-footer {
+  background-color: rgb(88, 90, 133);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.copy {
+  color: var(--white-clr);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+.designer {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #9ed3ff;
+  opacity: 0.5;
+  transition: 300ms color, 300ms opacity;
+}
+.designer:hover {
+  text-decoration: none;
+  color: #51b1ff;
+  opacity: 1;
+}
+/*  ===== MEDIA QUERIES ======  */
+@media screen and (max-width: 768px) {
+  /*  ===== BASE ======  */
+  .container {
+    padding: 0.8rem 0.5rem;
+  }
+  /*  ===== HEADER ======  */
+  header {
+    padding: 0.8rem 0.5rem;
+  }
+  .menu-icons {
+    display: block;
+  }
+  .nav-bar {
+    background-color: var(--orange-color);
+    border-top-left-radius: 5px;
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    top: 4.5rem;
+    right: 0;
+    transform: scalex(0);
+    transform-origin: right;
+    transition: transform 300ms;
+    z-index: 1;
+  }
+  .show-menu {
+    transform: scalex(1);
+  }
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+  .nav-item {
+    margin: 0.8rem 2rem;
+  }
+  .nav-link {
+    background-image: none;
+    color: var(--primary-clr);
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  .nav-link::before {
+    background-color: var(--primary-clr);
+  }
+  /*  ===== BODY ========  */
+  .home_img {
+    display: none;
+  }
+}
+@media screen and (min-width: 481px) {
+  header {
+    padding: 1.2rem 1.5rem;
+  }
+  /*  ===== BODY ========  */
+  .slogan {
+    padding: 0 1.5rem;
+  }
+  .slogan .slogan-title {
+    font-size: 2.2rem;
+    max-width: 38rem;
+  }
+  .slogan .slogan-text {
+    font-size: 1.15rem;
+    margin-top: 1.3rem;
+    max-width: 30rem;
+    line-height: 1.5rem;
+  }
+  .hero-btn {
+    width: 300px;
+    padding: 0.8rem 0;
+    border-radius: 5rem;
+    margin-top: 3rem;
+  }
+  .home-btn-link {
+    font-size: 1.3rem;
+  }
+  /* services */
+  .services-container {
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header {
+    padding: 1.2rem 5rem;
+  }
+  /*  ===== BODY ========  */
+  .section_1 {
+    padding: 0 5rem;
+    height: 80vh;
+  }
+  .slogan {
+    margin-top: 8rem;
+  }
+  .slogan .slogan-title {
+    font-size: 3rem;
+  }
+  .hero-btn {
+    width: 280px;
+    margin-top: 1.8rem;
+  }
+  .home-btn-link {
+    font-size: 1.2rem;
+  }
+  /* - About - */
+  .section_2 {
+    height: 100vh;
+    background-color: var(--primary-clr);
+    position: relative;
+  }
+  .about {
+    background: linear-gradient(
+      -45deg,
+      hsla(0, 0%, 94%, 0.1),
+      hsla(0, 0%, 94%, 0.3)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: thin solid rgb(239, 239, 239, 0.6);
+    padding: 2rem 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20rem;
+    z-index: 1;
+  }
+  .about-container img {
+    display: block;
+    position: absolute;
+    max-width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+  .about .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+  .feature_desc {
+    font-size: 1.05rem;
+    letter-spacing: 0.05rem;
+    opacity: 0.8;
+    max-width: 25rem;
+    line-height: 1.3rem;
+  }
+  /* section 3 */
+  .services {
+    margin: 3rem 0;
+  }
+  .service-title {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  .service span {
+    top: 1.5rem;
+    left: 1.3rem;
+  }
+  .service-description {
+    font-size: 0.9rem;
+  }
+  .services-container {
+    row-gap: 5rem;
+    column-gap: 1rem;
+    place-items: end;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  /* section 4 */
+  .section_4 {
+    display: block;
+    margin: 3rem 0;
+  }
+  .glide_slides {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .babysitter {
+    height: 80%;
+    margin-right: 1.5rem;
+  }
+  .babysitter img {
+    width: 25%;
+  }
+  .baby-sitter-name {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .baby-sitter-story {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin: 0rem 0 0.2rem 0;
+    line-height: 1.5rem;
+  }
+  /* section 5 */
+  .section_5 {
+    margin: 2rem 0;
+  }
+  .testimonials-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .testimony {
+    margin: 0;
+  }
+  .testimony img {
+    width: 20%;
+  }
+  .tester-name {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .testimony-text {
+    font-size: 0.91rem;
+    opacity: 0.8;
+  }
+  /* footer */
+  .top-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .address-text,
+  .phone-text,
+  .email-text {
+    font-size: 0.9rem;
+  }
+}
+
+	    </style>
+
+    
+  </head>
+
+<body>
+  <!-- ===== HEADER ====== -->
+  <div class="hero">
+    <header>
+      <!-- logo -->
+      <a class="logo">Little Rainbow</a>
+      <!-- navbar -->
+      <nav class="nav-bar">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="#hero" class="nav-link">HOME</a></li>
+          <li class="nav-item"><a href="#about-us" class="nav-link">ABOUT</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">SERVICES</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link">TESTIMONIALS</a></li>
+          <li class="nav-item"><a href="#footer" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="menu-icons">
+        <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+      </div>
+    </header>
+    <!-- ===== BODY ====== -->
+    <!-- home section -->
+    <section id="hero" class="section_1 home container">
+      <div class="slogan">
+        <h1 class="slogan-title">YOUR KIDS HAPPINESS IS OUR PRIORITY</h1>
+        <p class="slogan-text">Our services strives to exceed your expectations and deliver premium care to your family. Each individually selected babysitter exhibits an unparalled level of proffesionalism.</p>
+        <div class="hero-btn"><a target="_blank" href="file:///C:/Users/SKAMALAM/Documents/meena_mini_project/login.html" class="home-btn-link">I need a babysitter</a></div>
+      </div>
+    </section>
+  </div>
+  <!-- about us section -->
+  <section id="about-us" class="section_2 about-us">
+    <div class="about-container">
+      <div class="about">
+        <h2 class="about-title title">about us</h2>
+        <div class="about-text-container">
+          <div class="feature-1 feature">
+            <i class="bx bx-check-circle"></i>
+            <p class="feature_desc">Little Rainbow baby sitting website is one of the best emerging baby sitter website.</p>
+          </div>
+          <div class="feature-1 feature">
+            <i class="bx bx-check-circle"></i>
+            <p class="feature_desc">It all started in 2017 where we have gathered talanted baybsitters and we inspire them to give care to families.</p>
+          </div>
+          <div class="feature-1 feature">
+            <i class="bx bx-check-circle"></i>
+            <p class="feature_desc">We truly love working with young kids and we approach each child as an individual and enhance them.</p>
+          </div>
+          <div class="feature-1 feature">
+            <i class="bx bx-check-circle"></i>
+            <p class="feature_desc">Children enjoy a lot and spend their time happily.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- about image -->
+      <img src="https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/about_img.png?raw=true" class="about-img" alt="a happy sitting on the couch with children">
+    </div>
+  </section>
+  <!-- services section -->
+  <section id="services" class="section_3 services container">
+    <h2 class="services-title title">Services Little Rainbow Babysitter center give to their customers</h2>
+    <div class="services-container">
+      <div class="service service-1">
+	  <br>
+        <span>01</span>
+        <h2 class="service-title">We play with them.</h2>
+        <p class="service-description">We provide the friendly environment and a comfort to child by playing with them.</p>
+      </div>
+      <div class="service service-2">
+        <span>02</span>
+        <h2 class="service-title">We take care of them.</h2>
+        <p class="service-description">We look after them by providing all the necessary things at the right time and as per the schedule.</p>
+      </div>
+      <div class="service service-3">
+        <span>03</span>
+        <h2 class="service-title">We train them.</h2>
+        <p class="service-description">Smart classes are also available where they learns the rhymes, values of life, good habits etc, through the digital media.</p>
+      </div>
+      <div class="service service-4">
+        <span>04</span>
+        <h2 class="service-title">We give them toys.</h2>
+        <p class="service-description">Along with the digital training, they are introduced to variety of playing toys and even learning toys.</p>
+      </div>
+    </div>
+  </section>
+  <!-- babysitters section -->
+  <section id="babysitters" class="section_4 babysitters container">
+    <div class="sub__container">
+      <h2 class="bby_sitter_title">Find your ideal babysitter</h2>
+      <div class="glide_slides">
+        <div class="babysitter bb1 glide_slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYW8cfaS-27TAzaAFtnmZHpfbTkeed8-3A7A&usqp=CAU" alt="babysitter profile picture" class="profile">
+          <h2 class="baby-sitter-name">Deepika</h2>
+          <img src="https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/hearts.svg?raw=true" class="heart" alt="">
+          <span class="heart"></span>
+          <p class="baby-sitter-story">Deepika has been working for 3 years. She is very punctual. She takes care of the babies like her own babies. She is one of the experienced baby sitter.</p>
+        </div>
+
+        <div class="babysitter glide_slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5XvhmfkQGJLnrm5uU_BGvMNRGj9DcU2mV9g&usqp=CAU" alt="babysitter profile picture" class="profile">
+          <h2 class="baby-sitter-name">Praveena</h2>
+          <img src="https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/hearts.svg?raw=true" class="heart" alt="">
+          <span class="heart"></span>
+          <p class="baby-sitter-story">Praveena has been working for 2 years. She is creative. She keeps on entertaining and tell them lots of stories which helps them to grow up as a good human.</p>
+        </div>
+
+        <div class="babysitter glide_slide">
+          <img src="https://m.media-amazon.com/images/S/aplus-media/vc/ee0d36cc-d2d4-4e64-88f2-2ed0356619c2.__CR149,0,2196,2196_PT0_SX300_V1___.jpg"babysitter profile picture" class="profile">
+          <h2 class="baby-sitter-name">Sunitha</h2>
+          <img src="https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/hearts.svg?raw=true" class="heart" alt="">
+          <span class="heart"></span>
+          <p class="baby-sitter-story">Sunitha has been working for 1 year. She is very kind. She keeps her responsibilities upto the mark.She engages the babies with her creative activities .</p>
+        </div>
+
+        <div class="babysitter glide_slide">
+          <img src="https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/usr/Qo74wVV/shiva-rose.jpg" alt="babysitter profile picture" class="profile">
+          <h2 class="baby-sitter-name">Zara</h2>
+          <img src="https://github.com/r-e-d-ant/Babysitter-center-landing-page/blob/main/assets/img/hearts.svg?raw=true" class="heart" alt="">
+          <span class="heart"></span>
+          <p class="baby-sitter-story">Zara has been working for 6 months. She is one of the newly joined baby sitter but an excellent baby sitter. She will always be with the babies and takes care of them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonials section -->
+  <section id="testimonials" class="section_5 testimonials container">
+    <h2 class="testimonials-title title">What our clients say about Little Rainbow babysitter center</h2>
+    <div class="testimonials-container">
+      <div class="testimony">
+        <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-172215,resizemode-1,msid-29301933/wealth/tax/seven-ways-your-family-can-help-you-save-taxes.jpg" alt="" class="profile">
+        <h3 class="tester-name">Roshan's family</h3>
+        <p class="testimony-text">The sitters are very professional and are great with the kids.I appreciate the ease of doing so with so many other things to remember to do!</p>
+      </div>
+      <div class="testimony">
+        <img src="data:image/jpeg;base64,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" alt="" class="profile">
+        <h3 class="tester-name">Nikhil’s family</h3>
+        <p class="testimony-text">We thought the service was amazing.We felt totally comfortable leaving our 11 month old baby with u.Highly recommended.</p>
+      </div> 
+      <div class="testimony">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSwfHaYYPNSoGtAal6SWUKAoV_oKUv0_U5A&usqp=CAU" alt="" class="profile">
+        <h3 class="tester-name">Siddarth’s family</h3>
+        <p class="testimony-text">Overall a very good experience.The sitter inspired confidence and professionalism.An experience like this is priceless.</p>
+      </div>
+    </div>
+
+    <i class="left-direction direction"></i>
+    <i class="right-direction direction"></i>
+
+    <img src="" alt="" class="love">
+  </section>
+
+  <!-- ===== FOOTER ====== -->
+  <footer id="footer">
+    <h2 class="footer-title container">Our Contact</h2>
+    <div class="top-footer container">
+      <div>
+        <div class="address footer-element">
+          <i class="bx bx-home"></i>
+          <p class="address-text">2nd cross,3rd block,Rajajinagar,Bangalore</p>
+        </div>
+        <div class="phone footer-element">
+          <i class="bx bx-phone"></i>
+          <p class="phone-text">+919653678231</p>
+        </div>
+        <div class="email footer-element">
+          <i class="bx bx-envelope"></i>
+          <p class="email-text">littlerainbow@gmail.com</p>
+        </div>
+      </div>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe id="gmap_canvas" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=rajajinagar+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          <a href="https://123movies-a.com"></a><br>
+          <a href="https://www.embedgooglemap.net"></a>
+        </div>
+      </div>
+    </div>
+    <div class="end-footer">
+      <span class="copy">© 2021 copyright, Little Rainbow</span>
+      <a href="www.thierrymugisha.me" class="designer"></a>
+    </div>
+  </footer>
+</body>
+  </html>
